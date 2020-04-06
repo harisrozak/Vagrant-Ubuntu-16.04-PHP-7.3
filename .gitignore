@@ -1,0 +1,6 @@
+ubuntu-xenial-16.04-cloudimg-console.log
+.vagrant
+html/*
+!html/index
+!html/index.php
+!html/info.php
