@@ -20,7 +20,7 @@ Simple LAMP environment inside Vagrant box. Based on official `ubuntu/xenial64` 
 ## Some other improvement:
 
 - Themed web directory in index.php
-- Improved php.ini (upload_max_filesize, post_max_size, memory_limit, error_reporting, display_errors)
+- Improved php.ini (`upload_max_filesize, post_max_size, memory_limit, error_reporting, display_errors`)
 - fixed bug phpMyAdmin on file plugin_interface.lib.php
 
 
@@ -35,4 +35,4 @@ Assuming that VirtualBox (https://www.virtualbox.org/) and Vagrant (https://www.
 
 ## Credentials
 
-`phpMyAdmin` is accessible at http://192.168.33.10/phpmyadmin/ Username is 'root', password - '12345678'
+`phpMyAdmin` is accessible at http://192.168.33.10/phpmyadmin/ Username is 'root', password - 'root'
