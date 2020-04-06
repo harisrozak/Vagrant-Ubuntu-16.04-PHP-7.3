@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
 
 	# Provider Settings
 	config.vm.provider "virtualbox" do |vb|
-		vb.name = "xenial-lampp"
+		# vb.name = "xenial-lampp"
 		vb.memory = 2048
 		vb.cpus = 2
 	end
