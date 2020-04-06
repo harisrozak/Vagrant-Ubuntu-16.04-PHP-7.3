@@ -62,24 +62,26 @@ apt-get install -y git
 apt-get install -y composer
 
 # install NodeJS and NPM
-curl -sL https://deb.nodesource.com/setup_12.x | -E bash -
-apt-get install -y nodejs
+# this line won't work without sudo, 
+# so I decided to add sudo to rest of the commands begin on this line
+sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
 
 # install yarn
-npm install -g yarn
+sudo npm install -g yarn
 
 # disable release-upgrade notification
-chmod -x /etc/update-motd.d/91-release-upgrade
+sudo chmod -x /etc/update-motd.d/91-release-upgrade
 
 # change some php.ini file
-sed -i "s/upload_max_filesize = .*/upload_max_filesize = 100M/" $PHP_INI_FILE
-sed -i "s/post_max_size = .*/post_max_size = 100M/" $PHP_INI_FILE
-sed -i "s/memory_limit = .*/memory_limit = 512M/" $PHP_INI_FILE
-sed -i "s/error_reporting = .*/error_reporting = E_ALL | E_STRICT/" $PHP_INI_FILE
-sed -i "s/display_errors = .*/display_errors = On/" $PHP_INI_FILE
+sudo sed -i "s/upload_max_filesize = .*/upload_max_filesize = 100M/" $PHP_INI_FILE
+sudo sed -i "s/post_max_size = .*/post_max_size = 100M/" $PHP_INI_FILE
+sudo sed -i "s/memory_limit = .*/memory_limit = 512M/" $PHP_INI_FILE
+sudo sed -i "s/error_reporting = .*/error_reporting = E_ALL | E_STRICT/" $PHP_INI_FILE
+sudo sed -i "s/display_errors = .*/display_errors = On/" $PHP_INI_FILE
 
 # fix bug phpMyAdmin on file plugin_interface.lib.php
-sed -i '/if ($options != null && count($options) > 0)/c\if ($options != null && count((array)$options) > 0) {' /usr/share/phpmyadmin/libraries/plugin_interface.lib.php
+sudo sed -i '/if ($options != null && count($options) > 0)/c\if ($options != null && count((array)$options) > 0) {' /usr/share/phpmyadmin/libraries/plugin_interface.lib.php
 
 # restart apache
-service apache2 restart
+sudo service apache2 restart
