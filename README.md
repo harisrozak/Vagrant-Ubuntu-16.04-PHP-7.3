@@ -21,7 +21,7 @@ Simple LAMP environment inside Vagrant box. Based on official `ubuntu/xenial64` 
 
 - Themed web directory in index.php
 - Improved php.ini at `upload_max_filesize`, `post_max_size`, `memory_limit`, `error_reporting` and `display_errors`
-- Fixed bug phpMyAdmin on file `plugin_interface.lib.php` and `sql.lib.php`
+- Fixed phpMyAdmin bugs on file `plugin_interface.lib.php` and `sql.lib.php`
 
 
 ## How to set up:
