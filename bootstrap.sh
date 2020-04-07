@@ -83,5 +83,8 @@ sudo sed -i "s/display_errors = .*/display_errors = On/" $PHP_INI_FILE
 # fix bug phpMyAdmin on file plugin_interface.lib.php
 sudo sed -i '/if ($options != null && count($options) > 0)/c\if ($options != null && count((array)$options) > 0) {' /usr/share/phpmyadmin/libraries/plugin_interface.lib.php
 
+# fix bug phpMyAdmin on file sql.lib.php
+sudo sed -i 's/|| (count($analyzed_sql_results.'\''select_expr'\''. == 1)/|| (count($analyzed_sql_results['\''select_expr'\'']) == 1/' /usr/share/phpmyadmin/libraries/sql.lib.php
+
 # restart apache
 sudo service apache2 restart
